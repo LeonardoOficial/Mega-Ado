@@ -33,7 +33,38 @@ public class Atividade {
             switch (opcao) {
                 case 1:
                     System.out.println("*--Vamos ir Para o Guarujá--*\n \n");
+                    int graus, orcamento = 0;
+        String chovendo;
+        System.out.println("Desenvolver programa para decidir se podemos ir para o Guarujá no final de semana");
+
+        System.out.println("Quantos graus está fazendo hoje?");
+        graus = input.nextInt();
+
+        if (graus <= 25) {
+            System.out.println("A temperatura não está ideal");
+
+        } else {
+            System.out.println("Está chovendo?");
+            chovendo = input.next();
+
+            if (chovendo.equals("sim") || chovendo.equals("Sim")) {
+                System.out.println("Não vai dar para ir para a pria esse final de semana.");
+                
+            } else if (chovendo.equals("Não") || chovendo.equals("não")) {
+                System.out.println("Ótimo! falta uma etapa.");
+                System.out.println("Quanto você pretende levar para a praia?");
+                orcamento = input.nextInt();
+
+            }if (orcamento < 2000) {
+                System.out.println("Você não tem dinheiro suficiente \n");
+
+            } else if (orcamento > 2000) {
+                System.out.println("Você pode viajar! \n");
+            }
+        }
+                
                     break;
+                    
                 case 2:
                     System.out.println("*--Calcular quantidade de produtos--*\n \n");
                     break;
