@@ -26,8 +26,7 @@ public class Atividade {
                     + "4.Calcular IMC\n"
                     + "5.Calcular KWh\n"
                     + "6.Calcular tarifa Àgua e Esgoto\n"
-                    + "7.Integrantes do Grupo\n"
-                    + "8.Sair\n");
+                    + "7.Sair\n");
             System.out.println("Digite uma Opção:");
             opcao = input.nextInt();
 
@@ -114,16 +113,14 @@ public class Atividade {
                 case 6:
                     System.out.println("*--Calcular tarifa Àgua e Esgoto--*\n \n");
                     break;
+                
                 case 7:
-                    System.out.println("*--Integrantes do Grupo--*\n \n");
-                    break;
-                case 8:
                     System.out.println("Saindo");
                     break;
                 default:
                     System.out.println("Número Invalido");
             }
-        } while (opcao != 8);
+        } while (opcao != 7);
     }
 
 }
