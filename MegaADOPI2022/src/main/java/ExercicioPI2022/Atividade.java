@@ -80,7 +80,10 @@ public class Atividade {
                     System.out.println("Desenvolver um programa para calcular 10% de desconto no preço total de um produto ao comprar 10 ou mais unidades ou o preço total cheio se tiver menos de 10 unidades");
 
                     int produto;
-                    double valor,total,totald,desconto;
+                    double valor,
+                     total,
+                     totald,
+                     desconto;
 
                     System.out.println("Quantos itens você está comprando?");
                     produto = input.nextInt();
@@ -149,7 +152,25 @@ public class Atividade {
                     System.out.printf("Sua fatura é de %.2f Reais.\n", fatura);
                     break;
                 case 6:
-                    System.out.println("*--Calcular tarifa Àgua e Esgoto--*\n \n");
+                    System.out.println("*--Calcular tarifa Àgua e Esgoto--*\n ");
+
+                    float agua;
+                    float taxa = (float) 29.00;
+                    System.out.println("Digite o Consumo da agua em metro cubicos: ");
+                    agua = input.nextFloat();
+
+                    if (agua <= 10) {
+                        System.out.println("Total a pagar: " + (taxa * 2) + "R$");
+                    } else if ( agua <= 20) {
+                        System.out.println("Total a pagar: " + 2 * (taxa + (agua - 20) * 4.54) + "R$");
+
+                    } else if ( agua <= 50) {
+                        System.out.println("Total a pagar: " + 2 * (taxa + 10 * 4.54 + (agua - 20) * 11.33));
+
+                    } else {
+                        System.out.printf("Total a pagar: %.2f%n ", 2 * (taxa + 10 * 4.54 + 30 * 11.33 + (agua - 50) * 12.48));
+                    }
+
                     break;
 
                 case 7:
