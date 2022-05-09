@@ -20,7 +20,7 @@ public class Atividade {
         Scanner input = new Scanner(System.in);
         int opcao;
         do {
-            System.out.println("1. Créditos"
+            System.out.println("1.Créditos\n"
                     + "2.Ir para o Guarujá\n"
                     + "3.Calcular quantidade de produtos\n"
                     + "4.Calcular IMC\n"
@@ -33,12 +33,13 @@ public class Atividade {
             switch (opcao) {
                 case 1:
                     System.out.println("Trabalho realizado por: "
-                            + "Amaurilio Silva"
-                            + "Amaury Silva"
-                            + "Catiane Souza"
-                            + "Cintia Gentil"
-                            + "Erik Sousa "
-                            + "Leonardo Sousa");
+                            + "Amaurilio Silva\n"
+                            + "Amaury Silva\n"
+                            + "Catiane Souza\n"
+                            + "Cintia Gentil\n"
+                            + "Erik Sousa\n "
+                            + "Leonardo Sousa.\n");
+                    break;
                 case 2:
                     System.out.println("*--Vamos ir Para o Guarujá--*\n \n");
                     int graus,
@@ -50,14 +51,14 @@ public class Atividade {
                     graus = input.nextInt();
 
                     if (graus <= 25) {
-                        System.out.println("A temperatura não está ideal");
+                        System.out.println("A temperatura não está ideal.");
 
                     } else {
                         System.out.println("Está chovendo?");
                         chovendo = input.next();
 
                         if (chovendo.equals("sim") || chovendo.equals("Sim")) {
-                            System.out.println("Não vai dar para ir para a pria esse final de semana.");
+                            System.out.println("Não vai dar para ir para a praia esse final de semana.");
 
                         } else if (chovendo.equals("Não") || chovendo.equals("não")) {
                             System.out.println("Ótimo! falta uma etapa.");
@@ -66,7 +67,7 @@ public class Atividade {
 
                         }
                         if (orcamento < 2000) {
-                            System.out.println("Você não tem dinheiro suficiente \n");
+                            System.out.println("Você não tem dinheiro suficiente. \n");
 
                         } else if (orcamento > 2000) {
                             System.out.println("Você pode viajar! \n");
@@ -75,8 +76,32 @@ public class Atividade {
                     break;
 
                 case 3:
-                    System.out.println("*--Calcular quantidade de produtos--*\n \n");
+                    System.out.println("*--Calcular valor dos produtos--*\n \n");
+                    System.out.println("Desenvolver um programa para calcular 10% de desconto no preço total de um produto ao comprar 10 ou mais unidades ou o preço total cheio se tiver menos de 10 unidades");
+
+                    int produto;
+                    double valor,total,totald,desconto;
+
+                    System.out.println("Quantos itens você está comprando?");
+                    produto = input.nextInt();
+
+                    System.out.println("Quantas custa?");
+                    valor = input.nextDouble();
+
+                    total = (produto * valor);
+                    desconto = (total * 10) / 100;
+
+                    if (produto >= 10) {
+
+                        totald = total - desconto;
+                        System.out.println("Você irá pagar: " + totald);
+
+                    } else {
+                        System.out.println("Você irá pagar: " + total);
+                    }
+
                     break;
+
                 case 4:
                     System.out.println("*--Calcular IMC--*\n \n");
                     float altura,
@@ -92,34 +117,48 @@ public class Atividade {
 
                     if (imc < 18.5) {
                         System.out.println("De acordo com o cálculo, seu índice de massa"
-                                + " corporal indica que você está abaixo do peso :( ");
+                                + " corporal indica que você está abaixo do peso :( \n");
 
                     } else if (imc >= 18.5 && imc < 24.9) {
                         System.out.println("De acordo com o cálculo, seu índice de massa"
-                                + " corporal indica que seu peso está normal, Parabéns :)");
+                                + " corporal indica que seu peso está normal, Parabéns :)\n");
 
                     } else if (imc >= 24.9 && imc < 30) {
                         System.out.println("De acordo com o cálculo, seu índice de massa"
-                                + "corporal indica que você está com sobrepeso :(");
+                                + "corporal indica que você está com sobrepeso :(\n");
 
                     } else {
                         System.out.println("De acordo com o cálculo, seu índice de massa"
-                                + "corporal indica que você está com obesidade :( ");
+                                + "corporal indica que você está com obesidade :(\n ");
                     }
                     break;
                 case 5:
                     System.out.println("*--Calcular KWh--*\n \n");
+                    double energia,
+                     tusd;
+                    float fatura;
+                    energia = 0.28738;
+                    tusd = 0.30711;
+                    int consumok;
+
+                    System.out.println("Informe o seu comsumo de kWh");
+                    consumok = input.nextInt();
+
+                    fatura = (float) ((consumok * energia) + (consumok * tusd));
+
+                    System.out.printf("Sua fatura é de %.2f Reais.\n", fatura);
                     break;
                 case 6:
                     System.out.println("*--Calcular tarifa Àgua e Esgoto--*\n \n");
                     break;
-                
+
                 case 7:
                     System.out.println("Saindo");
                     break;
                 default:
                     System.out.println("Número Invalido");
             }
+
         } while (opcao != 7);
     }
 
